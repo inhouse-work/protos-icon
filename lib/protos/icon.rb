@@ -48,5 +48,9 @@ module Protos
     def self.heroicon(name, variant: :solid)
       Heroicons.new(name, variant:)
     end
+
+    def icon(...)
+      render Protos::Icon.heroicon(...)
+    end
   end
 end

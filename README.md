@@ -27,6 +27,23 @@ require "protos-icon"
 render Protos::Icon.heroicon("academic-cap", variant: :mini)
 ```
 
+Or you can include the module in a class and render them as an element:
+
+```ruby
+class MyComponent < Phlex::HTML
+  include Protos::Icon
+
+  def template
+    div(class: "w-6 h-6") do
+      icon("academic-cap", variant: :mini)
+    end
+  end
+end
+```
+
+This will call render on the icon component and output it directly to the
+component.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run
