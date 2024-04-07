@@ -16,7 +16,7 @@ module Protos
         @filepath = filepath
       end
 
-      def template
+      def view_template
         unsafe_raw File.read(@filepath)
       end
     end

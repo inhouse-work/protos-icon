@@ -3,7 +3,7 @@
 TestComponent = Class.new(Phlex::HTML) do
   include Protos::Icon
 
-  def template
+  def view_template
     icon("academic-cap", variant: :mini)
   end
 end
