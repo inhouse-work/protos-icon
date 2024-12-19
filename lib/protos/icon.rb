@@ -4,25 +4,44 @@ require "phlex"
 
 require_relative "icon/version"
 require_relative "icon/heroicons"
+require_relative "icon/inhouse"
 require_relative "icon/component"
 
 module Protos
   module Icon
     # Your code goes here...
+    class Error < StandardError; end
+    MissingIcon = Class.new(Error)
 
     GEM_ROOT = Pathname.new(__dir__).join("..", "..").expand_path
     public_constant :GEM_ROOT
 
     def self.heroicon(name, variant: :solid)
-      Heroicons.new(name, variant:)
+      Heroicons.build(name, variant:)
     end
 
-    def self.custom(name, **)
-      Custom.new(name)
+    def self.inhouse(name, **)
+      Inhouse.build(name)
+    end
+
+    def self.build(name, ...)
+      component = maybe(Heroicons, name, ...)
+      component ||= maybe(Inhouse, name, ...)
+      raise MissingIcon unless component
+
+      component
+    end
+
+    def self.maybe(mod, name, ...)
+      mod.build(name, ...)
+    rescue MissingIcon
+      nil
     end
 
     def icon(...)
-      render Protos::Icon.heroicon(...)
+      raise MissingIcon unless component = Protos::Icon.build(...)
+
+      render component
     end
   end
 end

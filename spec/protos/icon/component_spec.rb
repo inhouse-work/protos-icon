@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Protos::Icon::Component do
   before do
     stub_const(
@@ -6,9 +8,27 @@ RSpec.describe Protos::Icon::Component do
 
         def view_template
           icon("academic-cap", variant: :mini)
+          icon("twitter")
         end
       end
     )
+
+    stub_const(
+      "ErrorComponent", Class.new(Phlex::HTML) do
+        include Protos::Icon
+
+        def view_template
+          icon("does-not-exist")
+        end
+      end
+    )
+  end
+
+  it "handles non-existent icons" do
+    component = ErrorComponent.new
+
+    expect { component.call }
+      .to raise_error Protos::Icon::MissingIcon
   end
 
   it "can be included in a component" do

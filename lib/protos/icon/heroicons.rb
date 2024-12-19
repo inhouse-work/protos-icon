@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Protos
   module Icon
     module Heroicons
-      def self.new(name, variant: :solid)
+      def self.build(name, variant: :solid)
         filepath = lookup(name, variant:)
         Component.new(filepath)
       end
@@ -19,7 +21,7 @@ module Protos
         filepath
           .join("#{name}.svg")
           .tap do |path|
-            File.exist?(path) or raise ArgumentError, "Unknown icon: #{name}"
+            File.exist?(path) or raise MissingIcon, "Unknown icon: #{name}"
           end
       end
     end
