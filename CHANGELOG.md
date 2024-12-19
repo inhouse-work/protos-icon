@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.3.1] - 2024-12-18
+
+- Fixes issues with passing extra arguments to inhouse icons
+
 ## [0.3.0] - 2024-12-18
 
 - Adds custom Inhouse icons
