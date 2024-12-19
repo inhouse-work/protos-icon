@@ -12,4 +12,5 @@ gem "phlexing"
 gem "rake"
 gem "rspec"
 gem "rubocop-inhouse", require: false
+gem "tqdm"
 gem "zeitwerk"

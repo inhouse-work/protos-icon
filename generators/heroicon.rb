@@ -106,7 +106,7 @@ resources = resource_paths
     Resource.new(icon_class_name, paths)
   end
 
-resources.each do |resource|
+resources.with_progress.each do |resource|
   File.write(
     resource.file_name,
     TEMPLATE.result_with_hash(
@@ -117,6 +117,4 @@ resources.each do |resource|
       }
     )
   )
-
-  break
 end
