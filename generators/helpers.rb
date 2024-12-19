@@ -3,3 +3,4 @@
 require "erb"
 require "zeitwerk"
 require "phlexing"
+require "dry/files"

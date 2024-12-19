@@ -6,6 +6,7 @@ source "https://rubygems.org"
 gemspec
 
 gem "debug"
+gem "dry-files"
 gem "erb"
 gem "phlexing"
 gem "rake"
