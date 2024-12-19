@@ -4,9 +4,7 @@ module Protos
   module Icon
     module Heroicons
       def self.build(name, variant: :solid)
-        HeroiconComponent.build(name, variant:)
-      rescue NameError
-        raise MissingIcon, "Unknown icon: #{name}"
+        HeroiconComponent.new(name, variant:)
       end
     end
   end

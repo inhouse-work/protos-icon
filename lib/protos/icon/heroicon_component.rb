@@ -1,13 +1,19 @@
 module Protos
   module Icon
     class HeroiconComponent < Component
-      param :name
-      option :variant
+      param :name, reader: false
+      option :variant, reader: false, default: -> { :solid }
 
-      def self.build(name, variant: :solid, **)
-        "Protos::Icon::Heroicon::#{name.camelize}"
+      def view_template
+        icon_component.public_send(@variant)
+      end
+
+      def icon_component
+        "Protos::Icon::Heroicon::#{@name.camelize}"
           .constantize
-          .new(variant: variant)
+          .new(**attrs)
+      rescue NameError
+        raise MissingIcon, "Unknown icon: #{@name}"
       end
     end
   end
