@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class CreditCard < Component
+      class CreditCard < HeroiconComponent
         def solid
           svg(
             **attrs,

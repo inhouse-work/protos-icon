@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ClipboardDocumentCheck < Component
+      class ClipboardDocumentCheck < HeroiconComponent
         def solid
           svg(
             **attrs,

@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ReceiptPercent < Component
+      class ReceiptPercent < HeroiconComponent
         def solid
           svg(
             **attrs,

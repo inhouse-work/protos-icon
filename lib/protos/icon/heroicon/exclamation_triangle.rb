@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ExclamationTriangle < Component
+      class ExclamationTriangle < HeroiconComponent
         def solid
           svg(
             **attrs,

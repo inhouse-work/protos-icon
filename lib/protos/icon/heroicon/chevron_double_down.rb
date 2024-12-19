@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ChevronDoubleDown < Component
+      class ChevronDoubleDown < HeroiconComponent
         def solid
           svg(
             **attrs,

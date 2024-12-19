@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class FingerPrint < Component
+      class FingerPrint < HeroiconComponent
         def solid
           svg(
             **attrs,

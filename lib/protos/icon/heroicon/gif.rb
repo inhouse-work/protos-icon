@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Gif < Component
+      class Gif < HeroiconComponent
         def solid
           svg(
             **attrs,

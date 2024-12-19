@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Clock < Component
+      class Clock < HeroiconComponent
         def solid
           svg(
             **attrs,

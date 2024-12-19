@@ -15,7 +15,7 @@ TEMPLATE = ERB.new <<~ERB
   module Protos
     module Icon
       module Heroicon
-        class <%= icon_class_name %> < Component
+        class <%= icon_class_name %> < HeroiconComponent
           def solid
   <%= solid_icon %>
           end

@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ChatBubbleBottomCenter < Component
+      class ChatBubbleBottomCenter < HeroiconComponent
         def solid
           svg(
             **attrs,

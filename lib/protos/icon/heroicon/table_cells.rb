@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class TableCells < Component
+      class TableCells < HeroiconComponent
         def solid
           svg(
             **attrs,

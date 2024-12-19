@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class BookmarkSlash < Component
+      class BookmarkSlash < HeroiconComponent
         def solid
           svg(
             **attrs,

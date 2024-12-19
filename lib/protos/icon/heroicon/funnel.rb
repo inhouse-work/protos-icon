@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Funnel < Component
+      class Funnel < HeroiconComponent
         def solid
           svg(
             **attrs,

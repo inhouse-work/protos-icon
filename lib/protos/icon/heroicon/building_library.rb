@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class BuildingLibrary < Component
+      class BuildingLibrary < HeroiconComponent
         def solid
           svg(
             **attrs,

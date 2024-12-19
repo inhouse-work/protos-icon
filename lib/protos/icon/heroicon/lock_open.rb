@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class LockOpen < Component
+      class LockOpen < HeroiconComponent
         def solid
           svg(
             **attrs,

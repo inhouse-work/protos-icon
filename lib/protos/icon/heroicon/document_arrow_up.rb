@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class DocumentArrowUp < Component
+      class DocumentArrowUp < HeroiconComponent
         def solid
           svg(
             **attrs,

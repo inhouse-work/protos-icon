@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class PhoneXMark < Component
+      class PhoneXMark < HeroiconComponent
         def solid
           svg(
             **attrs,

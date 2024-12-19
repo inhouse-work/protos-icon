@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class QueueList < Component
+      class QueueList < HeroiconComponent
         def solid
           svg(
             **attrs,

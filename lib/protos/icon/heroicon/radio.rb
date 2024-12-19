@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Radio < Component
+      class Radio < HeroiconComponent
         def solid
           svg(
             **attrs,

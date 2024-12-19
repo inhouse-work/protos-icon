@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class QrCode < Component
+      class QrCode < HeroiconComponent
         def solid
           svg(
             **attrs,

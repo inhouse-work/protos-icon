@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class PaperClip < Component
+      class PaperClip < HeroiconComponent
         def solid
           svg(
             **attrs,

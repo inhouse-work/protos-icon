@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class CurrencyRupee < Component
+      class CurrencyRupee < HeroiconComponent
         def solid
           svg(
             **attrs,

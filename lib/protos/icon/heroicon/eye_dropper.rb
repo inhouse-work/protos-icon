@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class EyeDropper < Component
+      class EyeDropper < HeroiconComponent
         def solid
           svg(
             **attrs,

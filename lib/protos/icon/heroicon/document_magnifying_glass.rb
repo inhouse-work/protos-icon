@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class DocumentMagnifyingGlass < Component
+      class DocumentMagnifyingGlass < HeroiconComponent
         def solid
           svg(
             **attrs,

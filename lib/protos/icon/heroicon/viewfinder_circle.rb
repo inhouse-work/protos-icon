@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ViewfinderCircle < Component
+      class ViewfinderCircle < HeroiconComponent
         def solid
           svg(
             **attrs,

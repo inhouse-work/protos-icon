@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class EllipsisVertical < Component
+      class EllipsisVertical < HeroiconComponent
         def solid
           svg(
             **attrs,

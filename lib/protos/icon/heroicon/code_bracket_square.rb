@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class CodeBracketSquare < Component
+      class CodeBracketSquare < HeroiconComponent
         def solid
           svg(
             **attrs,

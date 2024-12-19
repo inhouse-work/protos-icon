@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class HandThumbDown < Component
+      class HandThumbDown < HeroiconComponent
         def solid
           svg(
             **attrs,

@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class MapPin < Component
+      class MapPin < HeroiconComponent
         def solid
           svg(
             **attrs,

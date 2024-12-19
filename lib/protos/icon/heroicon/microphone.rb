@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Microphone < Component
+      class Microphone < HeroiconComponent
         def solid
           svg(
             **attrs,

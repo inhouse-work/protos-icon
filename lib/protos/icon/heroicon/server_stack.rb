@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ServerStack < Component
+      class ServerStack < HeroiconComponent
         def solid
           svg(
             **attrs,

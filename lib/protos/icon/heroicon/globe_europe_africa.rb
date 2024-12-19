@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class GlobeEuropeAfrica < Component
+      class GlobeEuropeAfrica < HeroiconComponent
         def solid
           svg(
             **attrs,

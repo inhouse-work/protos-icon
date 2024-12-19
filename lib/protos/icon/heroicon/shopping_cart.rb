@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ShoppingCart < Component
+      class ShoppingCart < HeroiconComponent
         def solid
           svg(
             **attrs,

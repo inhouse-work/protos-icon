@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Battery50 < Component
+      class Battery50 < HeroiconComponent
         def solid
           svg(
             **attrs,

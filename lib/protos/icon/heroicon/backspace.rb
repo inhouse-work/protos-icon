@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Backspace < Component
+      class Backspace < HeroiconComponent
         def solid
           svg(
             **attrs,

@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Square2Stack < Component
+      class Square2Stack < HeroiconComponent
         def solid
           svg(
             **attrs,

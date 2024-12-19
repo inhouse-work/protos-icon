@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class CpuChip < Component
+      class CpuChip < HeroiconComponent
         def solid
           svg(
             **attrs,

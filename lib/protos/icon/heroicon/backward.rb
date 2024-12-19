@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Backward < Component
+      class Backward < HeroiconComponent
         def solid
           svg(
             **attrs,

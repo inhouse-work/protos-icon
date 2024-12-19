@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class DevicePhoneMobile < Component
+      class DevicePhoneMobile < HeroiconComponent
         def solid
           svg(
             **attrs,

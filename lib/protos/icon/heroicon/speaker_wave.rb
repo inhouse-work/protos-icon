@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class SpeakerWave < Component
+      class SpeakerWave < HeroiconComponent
         def solid
           svg(
             **attrs,

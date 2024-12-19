@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Forward < Component
+      class Forward < HeroiconComponent
         def solid
           svg(
             **attrs,

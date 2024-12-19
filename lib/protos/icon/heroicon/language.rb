@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Language < Component
+      class Language < HeroiconComponent
         def solid
           svg(
             **attrs,

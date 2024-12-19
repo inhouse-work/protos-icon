@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class PauseCircle < Component
+      class PauseCircle < HeroiconComponent
         def solid
           svg(
             **attrs,

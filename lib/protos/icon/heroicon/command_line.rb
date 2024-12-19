@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class CommandLine < Component
+      class CommandLine < HeroiconComponent
         def solid
           svg(
             **attrs,

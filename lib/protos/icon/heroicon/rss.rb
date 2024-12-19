@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Rss < Component
+      class Rss < HeroiconComponent
         def solid
           svg(
             **attrs,

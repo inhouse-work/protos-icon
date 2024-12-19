@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class WrenchScrewdriver < Component
+      class WrenchScrewdriver < HeroiconComponent
         def solid
           svg(
             **attrs,

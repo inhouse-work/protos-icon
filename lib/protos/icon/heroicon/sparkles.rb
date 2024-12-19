@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class Sparkles < Component
+      class Sparkles < HeroiconComponent
         def solid
           svg(
             **attrs,

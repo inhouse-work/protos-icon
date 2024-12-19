@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class ArchiveBoxXMark < Component
+      class ArchiveBoxXMark < HeroiconComponent
         def solid
           svg(
             **attrs,

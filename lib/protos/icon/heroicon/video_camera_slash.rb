@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Heroicon
-      class VideoCameraSlash < Component
+      class VideoCameraSlash < HeroiconComponent
         def solid
           svg(
             **attrs,
