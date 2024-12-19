@@ -27,7 +27,7 @@ module Protos
     def self.build(name, ...)
       component = maybe(Heroicons, name, ...)
       component ||= maybe(Inhouse, name, ...)
-      raise MissingIcon unless component
+      raise MissingIcon, "Could not find an icon for #{name}" unless component
 
       component
     end
