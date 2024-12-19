@@ -4,6 +4,7 @@
 
 - Removes `unsafe_raw` replaced with protos component generation
 - Removes old class lookup, uses constant auto loading instead
+- Adds `protos` as an explicit dependency
 
 ## [0.3.1] - 2024-12-18
 
