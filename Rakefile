@@ -7,6 +7,7 @@ RSpec::Core::RakeTask.new(:spec)
 
 task default: :spec
 
+desc "Download Heroicons"
 task :download_heroicons do
   system "git clone https://github.com/tailwindlabs/heroicons.git"
   system "cp -r heroicons/optimized/* assets/heroicons"

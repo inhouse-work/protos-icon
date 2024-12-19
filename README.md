@@ -1,12 +1,11 @@
 # Protos::Icon
 
-Icon component for Phlex with heroicons built in so far. It currently just uses
-`unsafe_raw` to output the content of the `.svg` files downloaded from the
-heroicons repo.
+This gem uses [phlexing](https://github.com/marcoroth/phlexing) component
+generation to convert SVG icons into protos components.
 
-This gem does not add any classes or contain the SVG in a container.
-It just outputs the SVG. It would be expected you would build this into your own
-component or helper.
+Other similar libraries to check out:
+
+- [phlex-icons](https://phlex-icons.fun/)
 
 ## Installation
 
@@ -24,7 +23,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 require "protos-icon"
 
 # This just returns a Phlex component
-render Protos::Icon.heroicon("academic-cap", variant: :mini)
+render Protos::Icon.find("academic-cap").new(variant: :solid)
 ```
 
 Or you can include the module in a class and render them as an element:
@@ -34,15 +33,44 @@ class MyComponent < Phlex::HTML
   include Protos::Icon
 
   def template
-    div(class: "w-6 h-6") do
-      icon("academic-cap", variant: :mini)
-    end
+    icon("academic-cap", variant: :solid, class: "w-6 h-6")
   end
 end
 ```
 
-This will call render on the icon component and output it directly to the
-component.
+Or you can wrap the helper inside your own component:
+
+```ruby
+module Ui
+  class Icon < ApplicationComponent
+    include Protos::Icon
+
+    param :name
+    option :size, default: -> { :md }
+    option :variant, default: -> { :solid }
+
+    STYLES = {
+      xs: ["w-3 h-3"],
+      sm: ["w-4 h-4"],
+      md: ["w-6 h-6"],
+      lg: ["w-8 h-8"],
+      xl: ["w-12 h-12"]
+    }.freeze
+
+    def view_template
+      icon(name, variant:, **attrs)
+    end
+
+    private
+
+    def theme
+      {
+        container: STYLES[size]
+      }
+    end
+  end
+end
+```
 
 ## Development
 

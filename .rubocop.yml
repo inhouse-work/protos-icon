@@ -7,3 +7,9 @@ inherit_gem:
 
 AllCops:
   TargetRubyVersion: 3.1
+
+Metrics/MethodLength:
+  CountAsOne: ['array', 'method_call']
+
+Metrics/ClassLength:
+  CountAsOne: ['array', 'method_call']

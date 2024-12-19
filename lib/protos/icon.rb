@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
+require "protos"
 require "phlex"
+require "dry/inflector"
 
 require_relative "icon/version"
-require_relative "icon/heroicons"
+require_relative "icon/heroicon"
 require_relative "icon/inhouse"
 require_relative "icon/component"
+require_relative "icon/heroicon_component"
 
 module Protos
   module Icon
@@ -16,31 +19,28 @@ module Protos
     GEM_ROOT = Pathname.new(__dir__).join("..", "..").expand_path
     public_constant :GEM_ROOT
 
-    def self.heroicon(name, variant: :solid)
-      Heroicons.build(name, variant:)
-    end
+    INFLECTOR = Dry::Inflector.new
 
-    def self.inhouse(name, **)
-      Inhouse.build(name)
-    end
-
-    def self.build(name, ...)
-      component = maybe(Heroicons, name, ...)
-      component ||= maybe(Inhouse, name, ...)
-      raise MissingIcon, "Could not find an icon for #{name}" unless component
-
-      component
-    end
-
-    def self.maybe(mod, name, ...)
-      mod.build(name, ...)
-    rescue MissingIcon
+    def self.lookup(constant, name)
+      klass = "#{constant}::#{name}"
+      INFLECTOR.constantize(klass)
+    rescue NameError
       nil
     end
 
-    def icon(...)
-      raise MissingIcon unless component = Protos::Icon.build(...)
+    def self.find(name)
+      [Heroicon, Inhouse].each do |constant|
+        component = lookup(constant, INFLECTOR.camelize(name))
+        return component if component
+      end
 
+      raise MissingIcon, "Unknown icon: #{name}"
+    end
+
+    def icon(name, ...)
+      component = Protos::Icon
+        .find(name)
+        .new(...)
       render component
     end
   end
