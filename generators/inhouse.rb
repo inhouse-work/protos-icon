@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "helpers"
 
 OUTPUT_DIR = Pathname.new("lib/protos/icon/inhouse").freeze
