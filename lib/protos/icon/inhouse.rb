@@ -3,12 +3,12 @@
 module Protos
   module Icon
     module Inhouse
-      def self.build(name)
+      def self.build(name, ...)
         filepath = lookup(name)
         Component.new(filepath)
       end
 
-      def self.lookup(name)
+      def self.lookup(name, ...)
         assets = Pathname.new(GEM_ROOT).join("assets/inhouse")
 
         assets

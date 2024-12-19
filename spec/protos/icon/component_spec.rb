@@ -8,7 +8,7 @@ RSpec.describe Protos::Icon::Component do
 
         def view_template
           icon("academic-cap", variant: :mini)
-          icon("twitter")
+          icon("twitter", variant: :mini)
         end
       end
     )
