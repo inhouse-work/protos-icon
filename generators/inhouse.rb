@@ -63,6 +63,10 @@ class Resource
     OUTPUT_DIR.join("#{@path.filename}.rb")
   end
 
+  def relative_file_path
+    file_name.relative_path_from(Pathname.new("lib")).to_s
+  end
+
   def icon
     build_icon(@path)
   end
@@ -87,6 +91,9 @@ resources = resource_paths
   .map do |path|
     Resource.new(path.icon_class_name, path)
   end
+
+module_file = OUTPUT_DIR.join("..", "inhouse.rb")
+add_autoload_entries(module_file, resources)
 
 resources.with_progress.each do |resource|
   File.write(

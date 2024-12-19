@@ -2,9 +2,10 @@
 
 require "protos"
 require "phlex"
+require "dry/inflector"
 
 require_relative "icon/version"
-require_relative "icon/heroicons"
+require_relative "icon/heroicon"
 require_relative "icon/inhouse"
 require_relative "icon/component"
 require_relative "icon/heroicon_component"
@@ -18,15 +19,18 @@ module Protos
     GEM_ROOT = Pathname.new(__dir__).join("..", "..").expand_path
     public_constant :GEM_ROOT
 
+    INFLECTOR = Dry::Inflector.new
+
     def self.lookup(constant, name)
-      "Protos::Icon::#{constant}::#{name}".constantize
+      klass = "#{constant}::#{name}"
+      INFLECTOR.constantize(klass)
     rescue NameError
       nil
     end
 
     def self.find(name)
-      [Heroicons, Inhouse].each do |constant|
-        component = lookup(constant, name.capitalize)
+      [Heroicon, Inhouse].each do |constant|
+        component = lookup(constant, INFLECTOR.camelize(name))
         return component if component
       end
 
@@ -34,7 +38,9 @@ module Protos
     end
 
     def icon(name, ...)
-      component = Protos::Icon.find(name).new(...)
+      component = Protos::Icon
+        .find(name)
+        .new(...)
       render component
     end
   end

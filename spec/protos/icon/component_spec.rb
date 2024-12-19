@@ -7,8 +7,8 @@ RSpec.describe Protos::Icon::Component do
         include Protos::Icon
 
         def view_template
-          icon("academic-cap", variant: :mini)
-          icon("twitter", variant: :mini)
+          icon("academic-cap", variant: :solid)
+          icon("twitter", variant: :solid)
         end
       end
     )

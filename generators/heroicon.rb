@@ -76,6 +76,10 @@ class Resource
     OUTPUT_DIR.join("#{@solid_path.filename}.rb")
   end
 
+  def relative_file_path
+    file_name.relative_path_from(Pathname.new("lib")).to_s
+  end
+
   def solid_icon
     build_icon(@solid_path)
   end
@@ -105,6 +109,9 @@ resources = resource_paths
   .map do |icon_class_name, paths|
     Resource.new(icon_class_name, paths)
   end
+
+module_file = OUTPUT_DIR.join("..", "heroicon.rb")
+add_autoload_entries(module_file, resources)
 
 resources.with_progress.each do |resource|
   File.write(
