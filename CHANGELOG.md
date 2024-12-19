@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.4.0] - 2024-12-18
+
+- Removes `unsafe_raw` replaced with protos component generation
+- Removes old class lookup, uses constant auto loading instead
+
 ## [0.3.1] - 2024-12-18
 
 - Fixes issues with passing extra arguments to inhouse icons
