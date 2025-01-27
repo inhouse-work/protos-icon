@@ -41,7 +41,7 @@ class ResourcePath
   end
 
   def icon_class_name
-    @name.split("-").map(&:capitalize).join
+    @name.split(/[-_]/).map(&:capitalize).join
   end
 
   def filename

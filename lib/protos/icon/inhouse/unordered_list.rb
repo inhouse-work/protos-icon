@@ -6,7 +6,7 @@
 module Protos
   module Icon
     module Inhouse
-      class Unordered_list < Component
+      class UnorderedList < Component
         def view_template
           svg(
             **attrs,
