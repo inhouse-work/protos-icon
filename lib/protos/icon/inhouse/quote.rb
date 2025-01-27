@@ -6,22 +6,21 @@
 module Protos
   module Icon
     module Inhouse
-      class Facebook < Component
+      class Quote < Component
         def view_template
           svg(
             **attrs,
-            xmlns: "http://www.w3.org/2000/svg",
-            width: "24",
-            height: "24",
-            viewbox: "0 0 24 24",
-            fill: "currentColor",
+            role: "presentation",
+            height: "16",
+            width: "16",
             aria_hidden: "true",
-            data_slot: "icon",
-            role: "presentation"
+            xmlns: "http://www.w3.org/2000/svg",
+            fill: "currentColor",
+            viewbox: "0 0 18 14"
           ) do |s|
             s.path(
               d:
-                "M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                "M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
             )
           end
         end

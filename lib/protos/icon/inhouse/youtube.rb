@@ -14,7 +14,10 @@ module Protos
             width: "24",
             height: "24",
             viewbox: "0 0 24 24",
-            class: "fill-current"
+            fill: "currentColor",
+            aria_hidden: "true",
+            data_slot: "icon",
+            role: "presentation"
           ) do |s|
             s.path(
               d:
