@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+# [0.4.1] - 2025-01-27
+
+- Adds `bold`, `italic`, `ordered_list`, `unordered_list`, `underline`, and `quote` icons
+- Minor fixes to the attributes of `Inhouse` icons
+
 ## [0.4.0] - 2024-12-18
 
 - Removes `unsafe_raw` replaced with protos component generation
