@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+# [1.0.0] - 2025-03-01
+
+- Adds Github and Instagram icons
+- Updates to Phlex `v2` and Protos `v1.0`
+
 # [0.4.1] - 2025-01-27
 
 - Adds `bold`, `italic`, `ordered_list`, `unordered_list`, `underline`, and `quote` icons
