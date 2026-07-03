@@ -2,7 +2,8 @@
 
 require_relative "helpers"
 
-OUTPUT_DIR = Pathname.new("lib/protos/icon/lucide").freeze
+ROOT_DIR = Pathname.new(__dir__).join("..").freeze
+OUTPUT_DIR = ROOT_DIR.join("lib", "protos", "icon", "lucide").freeze
 
 RUBOCOPS = %w[
   Layout/LineLength
@@ -21,10 +22,6 @@ TEMPLATE = ERB.new <<~ERB
           def solid
   <%= solid_icon %>
           end
-
-          def outline
-  <%= outline_icon %>
-          end
         end
       end
     end
@@ -35,7 +32,7 @@ ERB
 require "debug"
 
 class ResourcePath
-  REGEXP = %r{lucides/24/(?<variant>solid|outline)/(?<name>.+)\.svg}
+  REGEXP = %r{lucide/24/(?<variant>solid)/(?<name>.+)\.svg}
 
   attr_reader :variant, :name
 
@@ -50,10 +47,6 @@ class ResourcePath
 
   def solid?
     @variant == "solid"
-  end
-
-  def outline?
-    @variant == "outline"
   end
 
   def filename
@@ -71,7 +64,6 @@ class Resource
   def initialize(name, paths)
     @name = name
     @solid_path = paths.find(&:solid?)
-    @outline_path = paths.find(&:outline?)
   end
 
   def file_name
@@ -79,15 +71,11 @@ class Resource
   end
 
   def relative_file_path
-    file_name.relative_path_from(Pathname.new("lib")).to_s
+    file_name.relative_path_from(ROOT_DIR.join("lib")).to_s
   end
 
   def solid_icon
     build_icon(@solid_path)
-  end
-
-  def outline_icon
-    build_icon(@outline_path)
   end
 
   private
@@ -102,9 +90,12 @@ class Resource
   end
 end
 
-resource_paths = Pathname.glob("assets/lucides/24/**/*.svg").map do |path|
-  ResourcePath.new(path)
-end
+resource_paths = Pathname
+  .glob(ROOT_DIR
+  .join("assets/lucide/24/**/*.svg"))
+  .map do |path|
+    ResourcePath.new(path)
+  end
 
 resources = resource_paths
   .group_by(&:icon_class_name)
@@ -121,8 +112,7 @@ resources.with_progress.each do |resource|
     TEMPLATE.result_with_hash(
       {
         icon_class_name: resource.name,
-        solid_icon: resource.solid_icon,
-        outline_icon: resource.outline_icon
+        solid_icon: resource.solid_icon
       }
     )
   )

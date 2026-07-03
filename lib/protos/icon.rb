@@ -14,7 +14,9 @@ module Protos
   module Icon
     # Your code goes here...
     class Error < StandardError; end
-    MissingIcon = Class.new(Error)
+
+    class MissingIcon < Error
+    end
 
     GEM_ROOT = Pathname.new(__dir__).join("..", "..").expand_path
     public_constant :GEM_ROOT
