@@ -5,10 +5,14 @@ require "phlex"
 require "dry/inflector"
 
 require_relative "icon/version"
+
 require_relative "icon/heroicon"
 require_relative "icon/inhouse"
+require_relative "icon/lucide"
+
 require_relative "icon/component"
 require_relative "icon/heroicon_component"
+require_relative "icon/lucide_component"
 
 module Protos
   module Icon
@@ -31,7 +35,7 @@ module Protos
     end
 
     def self.find(name)
-      [Heroicon, Inhouse].each do |constant|
+      [Heroicon, Inhouse, Lucide].each do |constant|
         component = lookup(constant, INFLECTOR.camelize(name))
         return component if component
       end
