@@ -11,5 +11,17 @@ RSpec.describe Protos::Icon do
       output = component.new.call
       expect(output.start_with?("<svg")).to be true
     end
+
+    it "returns a herocion icon" do
+      component = described_class.find("academic-cap")
+      output = component.new.call
+      expect(output.start_with?("<svg")).to be true
+    end
+
+    it "returns a lucide icon" do
+      component = described_class.find("git-branch")
+      output = component.new.call
+      expect(output.start_with?("<svg")).to be true
+    end
   end
 end

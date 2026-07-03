@@ -1,5 +1,16 @@
 ## [Unreleased]
 
+# 1.1.0 - 2026-07-03
+
+- Adds some generated Lucide icons
+  - `circle-pile`
+  - `git-branch`
+  - `git-branch-plus`
+  - `git-branch-minus`
+  - `history`
+  - `square-stack`
+  - `test-tube-diagonal`
+
 # [1.0.0] - 2025-03-01
 
 - Adds Github and Instagram icons
