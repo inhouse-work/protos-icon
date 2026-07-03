@@ -2,7 +2,7 @@
 
 require_relative "helpers"
 
-OUTPUT_DIR = Pathname.new("lib/protos/icon/heroicon").freeze
+OUTPUT_DIR = Pathname.new("../lib/protos/icon/heroicon").freeze
 
 RUBOCOPS = %w[
   Layout/LineLength
@@ -79,7 +79,7 @@ class Resource
   end
 
   def relative_file_path
-    file_name.relative_path_from(Pathname.new("lib")).to_s
+    file_name.relative_path_from(Pathname.new("../lib")).to_s
   end
 
   def solid_icon
@@ -102,7 +102,7 @@ class Resource
   end
 end
 
-resource_paths = Pathname.glob("assets/heroicons/24/**/*.svg").map do |path|
+resource_paths = Pathname.glob("../assets/heroicons/24/**/*.svg").map do |path|
   ResourcePath.new(path)
 end
 
