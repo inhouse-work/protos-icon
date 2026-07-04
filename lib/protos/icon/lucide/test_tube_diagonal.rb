@@ -9,7 +9,6 @@ module Protos
       class TestTubeDiagonal < LucideComponent
         def solid
           svg(
-            **attrs,
             xmlns: "http://www.w3.org/2000/svg",
             width: "24",
             height: "24",
@@ -19,7 +18,8 @@ module Protos
             stroke_width: "2",
             stroke_linecap: "round",
             stroke_linejoin: "round",
-            class: "lucide lucide-test-tube-diagonal-icon lucide-test-tube-diagonal"
+            class: "lucide lucide-test-tube-diagonal-icon lucide-test-tube-diagonal",
+            **attrs
           ) do |s|
             s.path(
               d: "M21 7 6.82 21.18a2.83 2.83 0 0 1-3.99-.01a2.83 2.83 0 0 1 0-4L17 3"

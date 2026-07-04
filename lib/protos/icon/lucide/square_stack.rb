@@ -9,7 +9,6 @@ module Protos
       class SquareStack < LucideComponent
         def solid
           svg(
-            **attrs,
             xmlns: "http://www.w3.org/2000/svg",
             width: "24",
             height: "24",
@@ -19,7 +18,8 @@ module Protos
             stroke_width: "2",
             stroke_linecap: "round",
             stroke_linejoin: "round",
-            class: "lucide lucide-square-stack-icon lucide-square-stack"
+            class: "lucide lucide-square-stack-icon lucide-square-stack",
+            **attrs
           ) do |s|
             s.path(d: "M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2")
             s.path(d: "M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2")

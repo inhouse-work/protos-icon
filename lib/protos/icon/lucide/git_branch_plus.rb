@@ -8,7 +8,6 @@ module Protos
       class GitBranchPlus < LucideComponent
         def solid
           svg(
-            **attrs,
             xmlns: "http://www.w3.org/2000/svg",
             width: "24",
             height: "24",
@@ -18,7 +17,8 @@ module Protos
             stroke_width: "2",
             stroke_linecap: "round",
             stroke_linejoin: "round",
-            class: "lucide lucide-git-branch-plus-icon lucide-git-branch-plus"
+            class: "lucide lucide-git-branch-plus-icon lucide-git-branch-plus",
+            **attrs
           ) do |s|
             s.path(d: "M6 3v12")
             s.path(d: "M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z")

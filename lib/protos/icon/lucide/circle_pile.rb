@@ -8,7 +8,6 @@ module Protos
       class CirclePile < LucideComponent
         def solid
           svg(
-            **attrs,
             xmlns: "http://www.w3.org/2000/svg",
             width: "24",
             height: "24",
@@ -18,7 +17,8 @@ module Protos
             stroke_width: "2",
             stroke_linecap: "round",
             stroke_linejoin: "round",
-            class: "lucide lucide-circle-pile-icon lucide-circle-pile"
+            class: "lucide lucide-circle-pile-icon lucide-circle-pile",
+            **attrs
           ) do |s|
             s.circle(cx: "12", cy: "19", r: "2")
             s.circle(cx: "12", cy: "5", r: "2")

@@ -9,12 +9,12 @@ module Protos
       class DocumentMagnifyingGlass < HeroiconComponent
         def solid
           svg(
-            **attrs,
             xmlns: "http://www.w3.org/2000/svg",
             viewbox: "0 0 24 24",
             fill: "currentColor",
             aria_hidden: "true",
-            data_slot: "icon"
+            data_slot: "icon",
+            **attrs
           ) do |s|
             s.path(d: "M11.625 16.5a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75Z")
             s.path(
@@ -32,14 +32,14 @@ module Protos
 
         def outline
           svg(
-            **attrs,
             xmlns: "http://www.w3.org/2000/svg",
             fill: "none",
             viewbox: "0 0 24 24",
             stroke_width: "1.5",
             stroke: "currentColor",
             aria_hidden: "true",
-            data_slot: "icon"
+            data_slot: "icon",
+            **attrs
           ) do |s|
             s.path(
               stroke_linecap: "round",

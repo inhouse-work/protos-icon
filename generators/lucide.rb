@@ -83,7 +83,7 @@ class Resource
   def build_icon(path)
     Phlexing::Converter
       .convert(path.read)
-      .sub("svg(", "svg(\n  **attrs,")
+      .sub("\n) do", ",\n  **attrs) do")
       .split("\n")
       .map { |line| (" " * 10) + line }
       .join("\n")
