@@ -10,6 +10,10 @@
   - `history`
   - `square-stack`
   - `test-tube-diagonal`
+  - `package`
+  - `package-open`
+  - `package-plus`
+  - `package-minus`
 
 # [1.0.0] - 2025-03-01
 
