@@ -26,6 +26,8 @@ module Protos
             s.rect(width: "8", height: "8", x: "14", y: "14", rx: "2")
           end
         end
+
+        def outline = solid
       end
     end
   end

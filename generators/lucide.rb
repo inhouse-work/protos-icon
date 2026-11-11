@@ -22,6 +22,8 @@ TEMPLATE = ERB.new <<~ERB
           def solid
   <%= solid_icon %>
           end
+
+          def outline = solid
         end
       end
     end

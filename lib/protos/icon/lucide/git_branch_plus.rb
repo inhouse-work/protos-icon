@@ -28,6 +28,8 @@ module Protos
             s.path(d: "M21 18h-6")
           end
         end
+
+        def outline = solid
       end
     end
   end

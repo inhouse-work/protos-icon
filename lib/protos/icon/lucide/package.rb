@@ -30,6 +30,8 @@ module Protos
             s.path(d: "m7.5 4.27 9 5.15")
           end
         end
+
+        def outline = solid
       end
     end
   end

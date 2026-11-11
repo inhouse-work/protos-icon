@@ -36,6 +36,8 @@ module Protos
             )
           end
         end
+
+        def outline = solid
       end
     end
   end

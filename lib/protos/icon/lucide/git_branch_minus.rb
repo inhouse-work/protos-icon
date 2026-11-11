@@ -27,6 +27,8 @@ module Protos
             s.circle(cx: "6", cy: "18", r: "3")
           end
         end
+
+        def outline = solid
       end
     end
   end
